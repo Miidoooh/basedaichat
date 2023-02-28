@@ -2,10 +2,10 @@ import telegram
 import openai
 
 # Set up Telegram bot
-bot = telegram.Bot(token='YOUR_TELEGRAM_API_TOKEN')
+bot = telegram.Bot(BOT_TOKEN='YOUR_TELEGRAM_API_TOKEN')
 
 # Set up OpenAI API
-openai.api_key = 'YOUR_OPENAI_API_KEY'
+openai.api_key = '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'
 
 # Handle incoming messages from Telegram
 def handle_message(update, context):
@@ -40,7 +40,7 @@ def handle_message(update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text="Please use /based to talk to the AI.")
 
 # Set up webhook to receive updates from Telegram
-updater = telegram.ext.Updater(token='YOUR_TELEGRAM_API_TOKEN', use_context=True)
+updater = telegram.ext.Updater(BOT_TOKEN='YOUR_TELEGRAM_API_TOKEN', use_context=True)
 dispatcher = updater.dispatcher
 dispatcher.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text, handle_message))
 
